@@ -11,15 +11,50 @@
 </head>
 
 <body>
-    Todo
+    <div class="app">
+        <!-- header -->
+        <div class="header">
+            <h1 class="__title">Todo</h1>
+            <div class="states">
+                <img src="./images/icon-moon.svg" alt="moon" class="states-img" />
+            </div>
+        </div>
+        <!--  input new note -->
+        <div class="input-note">
+            <span><input type="checkbox" name="" id="check-newNote" /></span>
+            <input type="text" id="new-note" placeholder="Create new note" />
+        </div>
 
-    <!-- Add dynamic number -->
-    items left All Active Completed Clear Completed Drag and drop to reorder list
-
-    <div class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+        <!--  list off notes -->
+        <div class="notes">
+            <!--  note -->
+            <div class="note">
+                <span><input type="checkbox" name="" id="complete-note" /></span>
+                <p class="text-note">Lorem ipsum dolor sit amet.</p>
+                <span class="remove-note">X</span>
+            </div>
+            <div class="note">
+                <span><input type="checkbox" name="" id="complete-note" /></span>
+                <p class="text-note">Lorem ipsum dolor sit amet.</p>
+                <span class="remove-note">X</span>
+            </div>
+            <div class="note">
+                <span><input type="checkbox" name="" id="complete-note" /></span>
+                <p class="text-note">Lorem ipsum dolor sit amet.</p>
+                <span class="remove-note">X</span>
+            </div>
+        </div>
+        <!--  count notes -->
+        <div class="count">
+            <p class="number-notes">5 items left</p>
+            <button class="clear-completed-notes">Clear Completed</button>
+        </div>
+        <!--  filter notes -->
+        <div class="filter-notes">
+            <button class="show-all">All</button>
+            <button class="show-active">Active</button>
+            <button class="show-completed">Completed</button>
+        </div>
     </div>
 </body>
 
