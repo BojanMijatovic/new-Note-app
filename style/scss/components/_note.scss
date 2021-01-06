@@ -1,0 +1,33 @@
+// note
+.note {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+    border-bottom: 1px solid $very-dark-grayish-blue;
+    // complete-note
+    span {
+        #complete-note {
+            margin: 0 1rem;
+            color: $very-dark-grayish-blue;
+            &:checked {
+                outline: none;
+            }
+        }
+    }
+    // text-note
+    .text-note {
+        margin: 0 3rem;
+        font-size: 1.4rem;
+        color: $very-light-gray;
+    }
+    // remove-note
+    .remove-note {
+        color: $very-dark-grayish-blue;
+        font-size: 1.2rem;
+        &:hover {
+            color: $very-dark-grayish-blue-hover;
+            cursor: pointer;
+        }
+    }
+}

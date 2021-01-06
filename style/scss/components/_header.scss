@@ -1,0 +1,23 @@
+// header
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    // title
+    .__title {
+        font-size: 3rem;
+        color: $very-light-gray;
+        letter-spacing: 0.4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    // states
+    .states {
+        .states-img {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

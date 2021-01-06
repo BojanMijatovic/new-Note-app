@@ -1,0 +1,36 @@
+//  input-note
+.input-note {
+    background-color: $very-dark-desaturated-blue;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    border-radius: 1rem;
+    // span
+    span {
+        margin-top: 0.5rem;
+        #check-newNote {
+            border: 1px solid $very-dark-grayish-blue;
+            &:checked {
+                outline: none;
+            }
+            &:focus,
+            &:active {
+                outline: none;
+            }
+        }
+    }
+    // new-note
+    #new-note {
+        border: none;
+        font-size: 1.6rem;
+        padding: 0.5rem;
+        background-color: $very-light-gray;
+        color: $very-dark-grayish-blue;
+        border-radius: 1rem;
+        &:focus {
+            outline: none;
+        }
+    }
+}

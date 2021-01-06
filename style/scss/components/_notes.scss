@@ -1,0 +1,13 @@
+//notes
+.notes {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $very-dark-desaturated-blue;
+    border-radius: 0.8rem;
+    padding: 3rem 0 2rem;
+}
+
+@import './note';
