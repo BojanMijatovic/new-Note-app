@@ -16,43 +16,27 @@
         <div class="header">
             <h1 class="__title">Notes</h1>
             <div class="states">
-                <img src="./images/icon-moon.svg" alt="moon" class="states-img" />
+                <img src="./images/icon-sun.svg" alt="moon" class="states-img" />
             </div>
         </div>
         <!--  input new note -->
         <div class="input-note">
             <span><input type="radio" name="" id="check-newNote" /></span>
             <input type="text" id="new-note" placeholder="Create new note" />
+            <button class="add-note">add note</button>
         </div>
         <!--  list off notes -->
-        <div class="notes">
-            <!--  note -->
-            <div class="note">
-                <span><input type="checkbox" name="" id="complete-note" /></span>
-                <p class="text-note">Lorem ipsum dolor sit amet.</p>
-                <span class="remove-note">X</span>
-            </div>
-            <div class="note">
-                <span><input type="checkbox" name="" id="complete-note" /></span>
-                <p class="text-note">Lorem ipsum dolor sit amet.</p>
-                <span class="remove-note">X</span>
-            </div>
-            <div class="note">
-                <span><input type="checkbox" name="" id="complete-note" /></span>
-                <p class="text-note">Lorem ipsum dolor sit amet.</p>
-                <span class="remove-note">X</span>
-            </div>
-        </div>
+        <div class="notes"></div>
         <!--  count notes -->
-        <div class="count">
-            <p class="number-notes">5 items left</p>
+        <!-- <div class="count">
+            <p class="number-notes"></p>
             <button class="clear-completed-notes">Clear Completed</button>
-        </div>
+        </div> -->
         <!--  filter notes -->
         <div class="filter-notes">
             <button class="show-all">All</button>
-            <button class="show-active">Active</button>
-            <button class="show-completed">Completed</button>
+            <button class="show-active">Show Active</button>
+            <button class="remove-all">Remove All</button>
         </div>
     </div>
 </body>

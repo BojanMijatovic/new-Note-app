@@ -59,6 +59,10 @@ html {
     .input-note #new-note:focus {
       outline: none; }
 
+.move-item {
+  position: relative;
+  bottom: 14rem; }
+
 .notes {
   width: 80%;
   display: flex;
@@ -74,7 +78,8 @@ html {
   align-items: center;
   justify-content: space-between;
   margin: 1.5rem 0;
-  border-bottom: 1px solid #4d5066; }
+  border-bottom: 1px solid #4d5066;
+  width: 80%; }
   .note span #complete-note {
     margin: 0 1rem;
     color: #4d5066; }
@@ -86,10 +91,15 @@ html {
     color: #fafafa; }
   .note .remove-note {
     color: #4d5066;
-    font-size: 1.2rem; }
+    font-size: 1.3rem; }
     .note .remove-note:hover {
       color: #393a4c;
       cursor: pointer; }
+
+.error {
+  padding: 0 8rem;
+  color: #e4e5f1;
+  font-size: 1.4rem; }
 
 .count {
   display: flex;

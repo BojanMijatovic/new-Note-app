@@ -5,6 +5,7 @@
     justify-content: space-between;
     margin: 1.5rem 0;
     border-bottom: 1px solid $very-dark-grayish-blue;
+    width: 80%;
     // complete-note
     span {
         #complete-note {
@@ -24,10 +25,16 @@
     // remove-note
     .remove-note {
         color: $very-dark-grayish-blue;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         &:hover {
             color: $very-dark-grayish-blue-hover;
             cursor: pointer;
         }
     }
+}
+
+.error {
+    padding: 0 8rem;
+    color: $light-grayish-blue;
+    font-size: 1.4rem;
 }
