@@ -1,76 +1,83 @@
+const notesList = document.querySelector('.notes');
+const app = document.querySelector('.app');
+const searchNote = document.querySelector('#search-note');
+
+//  form
+const form = document.querySelector('#new-form');
+
 //  notes arr
-const notesList = [{
+const notes = [{
         text: 'Learn JS',
-        status: false
+        completed: false
     }, {
         text: 'Work on project',
-        status: true
+        completed: true
     }, {
         text: 'Find new job',
-        status: false
+        completed: false
     }, {
         text: 'Learn more ',
-        status: false
+        completed: false
     },
     {
         text: 'Start freelance carrier',
-        status: true
+        completed: true
     }
 ];
 
-// selection
-const app = document.querySelector('.app');
-const notes = document.querySelector('.notes');
-const count = document.querySelector('.count');
-const inputNote = document.querySelector('.input-note');
-const numberNotes = document.querySelector('.number-notes');
-const removeAllBtn = document.querySelector('.remove-all');
-const addNoteBtn = document.querySelector('.add-note');
-const newNoteValue = document.querySelector('#new-note');
-const clearCompleteNotesBtn = document.querySelector('.clear-completed-notes');
+//  filtered object
+const filters = {
+    searchText: ''
+}
 
+//  render notes
+const renderNotes = (notes, filters) => {
 
-// show notes List
-const showList = () => {
-    notes.innerHTML = '';
-    if (newNoteValue.value == '') {
-        notes.innerHTML = '<div class="note "><p class="error">Insert real value</p></div>'
-    } else {
-        notesList.push({ text: newNoteValue.value, status: false })
-        notesList.forEach(noteItem => {
-            const newNote = document.createElement('div');
-            newNote.innerHTML = `
-                <span><input type="checkbox" name="" id="complete-note" /></span>
-                <p class="text-note">${noteItem.text}</p>
-                <span class="remove-note">X</span>`;
-            newNote.classList.add('note');
-            notes.append(newNote);
-        });
-    }
+    const filteredNotes = notes.filter(note => {
+        return note.text.toLowerCase().includes(filters.searchText.toLowerCase());
+    })
+
+    notesList.innerHTML = '';
+
+    //  show list notes
+    filteredNotes.forEach(note => {
+        const noteItem = document.createElement('div');
+        noteItem.textContent = note.text;
+        notesList.append(noteItem);
+    });
+
+    //  filter notes
+    const notCompletedNotes = filteredNotes.filter(note => !note.completed);
+    //  note complete notes length
+    const test = `You have more ${notCompletedNotes.length} to complete`;
+    // check for classes
+    notesList.append(test);
 }
 
 
-//  uncompleted Notes length
-const showLengthNotes = (notes) => {
-        const uncompletedNotes = notes.filter(note => !note.status);
-        numberNotes.textContent = `${uncompletedNotes.length ? uncompletedNotes.length : `0`} notes left`;
-  count.append(numberNotes);
-}
+renderNotes(notes, filters)
 
 
-// remove all notes
-removeAllBtn.addEventListener('click', () => {
-  // notes.innerHTML = '';
-  inputNote.classList.add('move-item');
-  notes.style.display = 'none';
+// search notes
+searchNote.addEventListener('input', (e) => {
+    filters.searchText = e.target.value;
+    const n = document.createElement('p');
+    n.textContent = e.target.value;
+    //  check for classes 
+    notesList.append(n);
+    renderNotes(notes, filters)
 })
 
 
-//  add new note
-addNoteBtn.addEventListener('click', () => {
-  notes.style.display = 'flex';
-  inputNote.classList.remove('move-item');
-  showList();
-  console.log(notesList);
-  newNoteValue.value = '';
+//  form 
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (e.target.elements.fromForm.value == '') {
+        //  check values
+        console.log(`Insert real value`);
+    } else {
+        notes.push({ text: e.target.elements.fromForm.value, completed: false });
+        e.target.elements.fromForm.value = '';
+        renderNotes(notes, filters);
+    }
 })

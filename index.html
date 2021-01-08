@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
-    <link rel="stylesheet" href="./style/css/main.css" />
+    <!-- <link rel="stylesheet" href="./style/css/main.css" /> -->
     <script src="./js/main.js" defer></script>
     <title>Todo app</title>
 </head>
@@ -20,10 +20,13 @@
             </div>
         </div>
         <!--  input new note -->
-        <div class="input-note">
-            <span><input type="radio" name="" id="check-newNote" /></span>
+        <!-- <div class="input-note">
             <input type="text" id="new-note" placeholder="Create new note" />
-            <button class="add-note">add note</button>
+            <button id="add-note">add note</button>
+        </div> -->
+        <!-- search text -->
+        <div class="input-note">
+            <input type="text" id="search-note" placeholder="search notes" />
         </div>
         <!--  list off notes -->
         <div class="notes"></div>
@@ -38,6 +41,12 @@
             <button class="show-active">Show Active</button>
             <button class="remove-all">Remove All</button>
         </div>
+
+        <!--  form -->
+        <form id="new-form">
+            <input type="text" placeholder="from form" name="fromForm" />
+            <button>submit</button>
+        </form>
     </div>
 </body>
 

@@ -7,20 +7,6 @@
     justify-content: space-between;
     width: 80%;
     border-radius: 1rem;
-    // span
-    span {
-        margin-top: 0.5rem;
-        #check-newNote {
-            border: 1px solid $very-dark-grayish-blue;
-            &:checked {
-                outline: none;
-            }
-            &:focus,
-            &:active {
-                outline: none;
-            }
-        }
-    }
     // new-note
     #new-note {
         border: none;

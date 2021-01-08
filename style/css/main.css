@@ -41,14 +41,6 @@ html {
   justify-content: space-between;
   width: 80%;
   border-radius: 1rem; }
-  .input-note span {
-    margin-top: 0.5rem; }
-    .input-note span #check-newNote {
-      border: 1px solid #4d5066; }
-      .input-note span #check-newNote:checked {
-        outline: none; }
-      .input-note span #check-newNote:focus, .input-note span #check-newNote:active {
-        outline: none; }
   .input-note #new-note {
     border: none;
     font-size: 1.6rem;
