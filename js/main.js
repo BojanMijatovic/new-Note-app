@@ -2,8 +2,14 @@ const notesList = document.querySelector('.notes');
 const app = document.querySelector('.app');
 const searchNote = document.querySelector('#search-note');
 
+
 //  form
 const form = document.querySelector('#new-form');
+
+// hide-completed-notes
+const hideCompleteNotes = document.querySelector('#hide-completed-notes');
+
+
 
 //  notes arr
 const notes = [{
@@ -27,15 +33,27 @@ const notes = [{
 
 //  filtered object
 const filters = {
-    searchText: ''
+    searchText: '',
+    hideCompleted: false
 }
 
 //  render notes
 const renderNotes = (notes, filters) => {
 
     const filteredNotes = notes.filter(note => {
-        return note.text.toLowerCase().includes(filters.searchText.toLowerCase());
+        const searchTexMatch = note.text.toLowerCase().includes(filters.searchText.toLowerCase());
+        const hideCompletedMatch = !filters.hideCompleted || !note.completed;
+        return searchTexMatch && hideCompletedMatch;
     })
+
+    // filteredNotes =
+    // {
+    // if (filters.hideCompleted) {
+    //     return !note.completed;
+    // } else {
+    //     return true;
+    // }
+    // })
 
     notesList.innerHTML = '';
 
@@ -80,4 +98,13 @@ form.addEventListener('submit', (e) => {
         e.target.elements.fromForm.value = '';
         renderNotes(notes, filters);
     }
+})
+
+
+// hide-completed-notes
+hideCompleteNotes.addEventListener('change', (e) => {
+    console.log(e.target.checked);
+    filters.hideCompleted = e.target.checked;
+    renderNotes(notes, filters);
+    console.log(filters);
 })
