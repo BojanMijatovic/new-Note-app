@@ -2,7 +2,6 @@ const notesList = document.querySelector('.notes');
 const app = document.querySelector('.app');
 const searchNote = document.querySelector('#search-note');
 
-
 //  form
 const form = document.querySelector('#new-form');
 
@@ -10,32 +9,33 @@ const form = document.querySelector('#new-form');
 const hideCompleteNotes = document.querySelector('#hide-completed-notes');
 
 
-
 //  notes arr
-const notes = [{
-        text: 'Learn JS',
-        completed: false
-    }, {
-        text: 'Work on project',
-        completed: true
-    }, {
-        text: 'Find new job',
-        completed: false
-    }, {
-        text: 'Learn more ',
-        completed: false
-    },
-    {
-        text: 'Start freelance carrier',
-        completed: true
-    }
-];
+let notes = [];
 
 //  filtered object
 const filters = {
     searchText: '',
     hideCompleted: false
 }
+
+const notesJSON = localStorage.getItem('notes');
+
+if (notesJSON !== null) {
+    notes = JSON.parse(notesJSON);
+}
+
+// //  local storage 
+// const user = {
+//     name: 'Alex',
+//     age: 34
+// }
+// const str = JSON.stringify(user);
+// // console.log(str);
+// localStorage.setItem('user', str);
+// const getItem = localStorage.getItem('user');
+// console.log(getItem);
+
+
 
 //  render notes
 const renderNotes = (notes, filters) => {
@@ -72,7 +72,6 @@ const renderNotes = (notes, filters) => {
     notesList.append(test);
 }
 
-
 renderNotes(notes, filters)
 
 
@@ -95,6 +94,7 @@ form.addEventListener('submit', (e) => {
         console.log(`Insert real value`);
     } else {
         notes.push({ text: e.target.elements.fromForm.value, completed: false });
+        localStorage.setItem('notes', JSON.stringify(notes));
         e.target.elements.fromForm.value = '';
         renderNotes(notes, filters);
     }
@@ -103,8 +103,6 @@ form.addEventListener('submit', (e) => {
 
 // hide-completed-notes
 hideCompleteNotes.addEventListener('change', (e) => {
-    console.log(e.target.checked);
     filters.hideCompleted = e.target.checked;
     renderNotes(notes, filters);
-    console.log(filters);
 })
