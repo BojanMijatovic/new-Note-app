@@ -30,8 +30,6 @@ html {
     letter-spacing: 0.4rem;
     font-weight: 700;
     text-transform: uppercase; }
-  .header .states .states-img:hover {
-    cursor: pointer; }
 
 .input-note {
   background-color: #25273c;
@@ -41,19 +39,17 @@ html {
   justify-content: space-between;
   width: 80%;
   border-radius: 1rem; }
-  .input-note #new-note {
+  .input-note #search-note {
+    margin: 0 auto;
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
     border: none;
-    font-size: 1.6rem;
-    padding: 0.5rem;
-    background-color: #fafafa;
-    color: #4d5066;
-    border-radius: 1rem; }
-    .input-note #new-note:focus {
+    background-color: #4d5066;
+    color: #cacde8; }
+    .input-note #search-note:focus {
       outline: none; }
-
-.move-item {
-  position: relative;
-  bottom: 14rem; }
 
 .notes {
   width: 80%;
@@ -69,50 +65,36 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 1.5rem 0;
+  margin: 1.5rem 1rem;
   border-bottom: 1px solid #4d5066;
+  color: #cacde8;
+  font-size: 1.6rem;
   width: 80%; }
-  .note span #complete-note {
-    margin: 0 1rem;
-    color: #4d5066; }
-    .note span #complete-note:checked {
-      outline: none; }
-  .note .text-note {
-    margin: 0 3rem;
-    font-size: 1.4rem;
-    color: #fafafa; }
-  .note .remove-note {
-    color: #4d5066;
-    font-size: 1.3rem; }
-    .note .remove-note:hover {
-      color: #393a4c;
-      cursor: pointer; }
+  .note span {
+    font-size: 1.6rem;
+    color: #fafafa;
+    margin-top: 1rem; }
+    .note span:hover {
+      color: #e4e5f1; }
 
-.error {
-  padding: 0 8rem;
-  color: #e4e5f1;
-  font-size: 1.4rem; }
+.show-text {
+  width: auto;
+  margin: 0 auto;
+  color: #cacde8;
+  font-size: 1.5rem;
+  padding: 1rem; }
 
-.count {
+.remove-btn {
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  border-bottom: 1rem;
+  background-color: #cacde8;
+  color: #25273c;
+  border: none;
+  margin: 0.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 80%; }
-  .count .number-notes {
-    color: #e4e5f1;
-    font-size: 1.6rem; }
-  .count .clear-completed-notes {
-    background-color: #4d5066;
-    color: #e4e5f1;
-    font-size: 1.3rem;
-    font-weight: 500;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 1rem; }
-    .count .clear-completed-notes:hover {
-      cursor: pointer; }
-    .count .clear-completed-notes:focus {
-      outline: none; }
+  font-weight: 500; }
 
 .filter-notes {
   display: flex;
@@ -133,5 +115,46 @@ html {
       cursor: pointer; }
     .filter-notes button:focus {
       outline: none; }
+
+#new-form {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%; }
+  #new-form input {
+    padding: 0.8rem 1rem;
+    color: #e4e5f1;
+    background-color: #25273c;
+    border: none;
+    margin: 1rem;
+    width: 80%;
+    border-radius: 1rem;
+    font-size: 1.4rem; }
+    #new-form input:focus {
+      outline: none; }
+  #new-form button {
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    padding: 0.8rem 1rem;
+    color: #e4e5f1;
+    background-color: #25273c;
+    border: none;
+    font-weight: 500; }
+    #new-form button:focus {
+      outline: none; }
+
+.hide-completed-notes {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .hide-completed-notes .text {
+    color: #e4e5f1;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center; }
+    .hide-completed-notes .text #hide-completed-notes {
+      margin: 0 1rem;
+      border: none; }
 
 /*# sourceMappingURL=main.css.map */

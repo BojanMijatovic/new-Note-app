@@ -7,21 +7,18 @@
     justify-content: space-between;
     width: 80%;
     border-radius: 1rem;
-    // new-note
-    #new-note {
-        border: none;
-        font-size: 1.6rem;
-        padding: 0.5rem;
-        background-color: $very-light-gray;
-        color: $very-dark-grayish-blue;
+    //  search note
+    #search-note {
+        margin: 0 auto;
+        width: 100%;
+        font-size: 1.4rem;
+        padding: 0.5rem 1rem;
         border-radius: 1rem;
+        border: none;
+        background-color: $very-dark-grayish-blue;
+        color: $light-grayish-blue;
         &:focus {
             outline: none;
         }
     }
-}
-
-.move-item {
-    position: relative;
-    bottom: 14rem;
 }

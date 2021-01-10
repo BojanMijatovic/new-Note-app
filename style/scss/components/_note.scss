@@ -3,38 +3,39 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 1.5rem 0;
+    margin: 1.5rem 1rem;
     border-bottom: 1px solid $very-dark-grayish-blue;
+    color: $light-grayish-blue;
+    font-size: 1.6rem;
     width: 80%;
-    // complete-note
+    //  text note
     span {
-        #complete-note {
-            margin: 0 1rem;
-            color: $very-dark-grayish-blue;
-            &:checked {
-                outline: none;
-            }
-        }
-    }
-    // text-note
-    .text-note {
-        margin: 0 3rem;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         color: $very-light-gray;
-    }
-    // remove-note
-    .remove-note {
-        color: $very-dark-grayish-blue;
-        font-size: 1.3rem;
+        margin-top: 1rem;
         &:hover {
-            color: $very-dark-grayish-blue-hover;
-            cursor: pointer;
+            color: $light-grayish-blue-hover;
         }
     }
 }
 
-.error {
-    padding: 0 8rem;
+.show-text {
+    width: auto;
+    margin: 0 auto;
     color: $light-grayish-blue;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.remove-btn {
+    padding: 0.5rem;
     font-size: 1.4rem;
+    border-bottom: 1rem;
+    background-color: $light-grayish-blue;
+    color: $very-dark-desaturated-blue;
+    border: none;
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
 }

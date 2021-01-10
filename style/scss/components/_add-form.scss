@@ -1,0 +1,50 @@
+//  form
+#new-form {
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    input {
+        padding: 0.8rem 1rem;
+        color: $very-light-grayish-blue;
+        background-color: $very-dark-desaturated-blue;
+        border: none;
+        margin: 1rem;
+        width: 80%;
+        border-radius: 1rem;
+        font-size: 1.4rem;
+        &:focus {
+            outline: none;
+        }
+    }
+    button {
+        border-radius: 1rem;
+        font-size: 1.4rem;
+        padding: 0.8rem 1rem;
+        color: $very-light-grayish-blue;
+        background-color: $very-dark-desaturated-blue;
+        border: none;
+        font-weight: 500;
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+//  hide notes
+.hide-completed-notes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .text {
+        color: $very-light-grayish-blue;
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        #hide-completed-notes {
+            margin: 0 1rem;
+            border: none;
+        }
+    }
+}

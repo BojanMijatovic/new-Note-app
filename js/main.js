@@ -29,6 +29,17 @@ const removeSingleItem = (id) => {
 }
 
 
+//  toggle note
+const toggleNote = (id) => {
+    const note = notes.find(note => {
+        return note.id === id;
+    });
+
+    if (note !== undefined) {
+        note.completed = !note.completed;
+    }
+}
+
 
 //  render notes
 const renderNotes = (notes, filters) => {
@@ -46,11 +57,22 @@ const renderNotes = (notes, filters) => {
         //  create single element
         const noteItem = document.createElement('div');
         const checkBtn = document.createElement('input');
+
+        //  checkbox
         checkBtn.setAttribute('type', 'checkbox');
+        checkBtn.checked = note.completed;
+        checkBtn.addEventListener('change', function() {
+            toggleNote(note.id);
+            localStorage.setItem('notes', JSON.stringify(notes));
+            renderNotes(notes, filters);
+        });
+
+
         const noteText = document.createElement('span');
         const removeBtn = document.createElement('button');
 
         removeBtn.textContent = 'x';
+        removeBtn.classList.add('remove-btn');
         noteText.textContent = note.text;
 
         //  remove single item
@@ -64,7 +86,7 @@ const renderNotes = (notes, filters) => {
         noteItem.append(checkBtn);
         noteItem.append(noteText);
         noteItem.append(removeBtn);
-
+        noteItem.classList.add('note');
         //  append item to list 
         notesList.append(noteItem);
     });
@@ -72,9 +94,12 @@ const renderNotes = (notes, filters) => {
     //  filter notes
     const notCompletedNotes = filteredNotes.filter(note => !note.completed);
     //  note complete notes length
+    const showNumNotCompletedNotes = document.createElement('p');
     const test = `You have more ${notCompletedNotes.length} to complete`;
+    showNumNotCompletedNotes.classList.add('show-text');
+    showNumNotCompletedNotes.textContent = test;
     // check for classes
-    notesList.append(test);
+    notesList.append(showNumNotCompletedNotes);
 }
 
 renderNotes(notes, filters);

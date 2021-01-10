@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.1/uuidv4.min.js"></script>
-    <!-- <link rel="stylesheet" href="./style/css/main.css" /> -->
+    <link rel="stylesheet" href="./style/css/main.css" />
     <script src="./js/main.js" defer></script>
     <title>Todo app</title>
 </head>
@@ -16,43 +16,26 @@
         <!-- header -->
         <div class="header">
             <h1 class="__title">Notes</h1>
-            <div class="states">
-                <img src="./images/icon-sun.svg" alt="moon" class="states-img" />
-            </div>
         </div>
-        <!--  input new note -->
-        <!-- <div class="input-note">
-            <input type="text" id="new-note" placeholder="Create new note" />
-            <button id="add-note">add note</button>
-        </div> -->
         <!-- search text -->
         <div class="input-note">
             <input type="text" id="search-note" placeholder="search notes" />
         </div>
-        <!--  list off notes -->
+        <!--notes -->
         <div class="notes"></div>
-        <!--  count notes -->
-        <!-- <div class="count">
-            <p class="number-notes"></p>
-            <button class="clear-completed-notes">Clear Completed</button>
-        </div> -->
-        <!--  filter notes -->
-        <div class="filter-notes">
-            <button class="show-all">All</button>
-            <button class="show-active">Show Active</button>
-            <button class="remove-all">Remove All</button>
-        </div>
-
         <!--  form -->
         <form id="new-form">
-            <input type="text" placeholder="from form" name="fromForm" />
-            <button>submit</button>
+            <input type="text" placeholder="new note" name="fromForm" />
+            <button>add</button>
         </form>
 
         <!--  check completed notes -->
-        <label>
-        Hide completed Notes <input type="checkbox" id="hide-completed-notes" />
-      </label>
+        <div class="hide-completed-notes">
+            <label class="text">
+          Hide completed Notes
+          <input type="checkbox" id="hide-completed-notes" />
+        </label>
+        </div>
     </div>
 </body>
 
