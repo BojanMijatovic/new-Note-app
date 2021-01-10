@@ -1,11 +1,7 @@
 const notesList = document.querySelector('.notes');
 const app = document.querySelector('.app');
 const searchNote = document.querySelector('#search-note');
-
-//  form
 const form = document.querySelector('#new-form');
-
-// hide-completed-notes
 const hideCompleteNotes = document.querySelector('#hide-completed-notes');
 
 
@@ -19,21 +15,18 @@ const filters = {
 }
 
 const notesJSON = localStorage.getItem('notes');
-
 if (notesJSON !== null) {
     notes = JSON.parse(notesJSON);
 }
 
-// //  local storage 
-// const user = {
-//     name: 'Alex',
-//     age: 34
-// }
-// const str = JSON.stringify(user);
-// // console.log(str);
-// localStorage.setItem('user', str);
-// const getItem = localStorage.getItem('user');
-// console.log(getItem);
+
+//  remove note
+const removeSingleItem = (id) => {
+    const noteIndex = notes.findIndex(note => note.id === id);
+    if (noteIndex > -1) {
+        notes.splice(noteIndex, 1)
+    }
+}
 
 
 
@@ -46,21 +39,33 @@ const renderNotes = (notes, filters) => {
         return searchTexMatch && hideCompletedMatch;
     })
 
-    // filteredNotes =
-    // {
-    // if (filters.hideCompleted) {
-    //     return !note.completed;
-    // } else {
-    //     return true;
-    // }
-    // })
-
     notesList.innerHTML = '';
 
     //  show list notes
     filteredNotes.forEach(note => {
+        //  create single element
         const noteItem = document.createElement('div');
-        noteItem.textContent = note.text;
+        const checkBtn = document.createElement('input');
+        checkBtn.setAttribute('type', 'checkbox');
+        const noteText = document.createElement('span');
+        const removeBtn = document.createElement('button');
+
+        removeBtn.textContent = 'x';
+        noteText.textContent = note.text;
+
+        //  remove single item
+        removeBtn.addEventListener('click', function() {
+            removeSingleItem(note.id);
+            localStorage.setItem('notes', JSON.stringify(notes));
+            renderNotes(notes, filters);
+        });
+
+        //  append single item
+        noteItem.append(checkBtn);
+        noteItem.append(noteText);
+        noteItem.append(removeBtn);
+
+        //  append item to list 
         notesList.append(noteItem);
     });
 
@@ -72,7 +77,7 @@ const renderNotes = (notes, filters) => {
     notesList.append(test);
 }
 
-renderNotes(notes, filters)
+renderNotes(notes, filters);
 
 
 // search notes
@@ -93,16 +98,18 @@ form.addEventListener('submit', (e) => {
         //  check values
         console.log(`Insert real value`);
     } else {
-        notes.push({ text: e.target.elements.fromForm.value, completed: false });
+        notes.push({ text: e.target.elements.fromForm.value, completed: false, id: uuidv4() });
         localStorage.setItem('notes', JSON.stringify(notes));
         e.target.elements.fromForm.value = '';
         renderNotes(notes, filters);
     }
 })
 
-
 // hide-completed-notes
 hideCompleteNotes.addEventListener('change', (e) => {
     filters.hideCompleted = e.target.checked;
     renderNotes(notes, filters);
 })
+
+
+console.log(notes);
