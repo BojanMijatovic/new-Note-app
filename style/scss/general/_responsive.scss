@@ -1,0 +1,58 @@
+@include media-md {
+    //  header
+    .header {
+        .__title {
+            font-size: 3.5rem;
+        }
+    }
+    // input-note
+    .input-note {
+        width: 70%;
+        #search-note {
+            font-size: 1.8rem;
+        }
+    }
+    //  notes
+    .notes {
+        width: 70%;
+        //  single note
+        .note {
+            span {
+                font-size: 2rem;
+            }
+        }
+        .show-text {
+            font-size: 1.8rem;
+            margin-top: 1.5rem;
+        }
+    }
+    //  form
+    #new-form {
+        width: 75%;
+        input {
+            font-size: 1.8rem;
+        }
+        button {
+            font-size: 1.8rem;
+        }
+    }
+    //  hide completed
+    .hide-completed-notes {
+        .text {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+// media-large
+@include media-extra-large {
+    .input-note {
+        width: 50%;
+    }
+    .notes {
+        width: 50%;
+    }
+    #new-form {
+        width: 50%;
+    }
+}

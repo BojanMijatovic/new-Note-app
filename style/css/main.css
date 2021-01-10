@@ -13,6 +13,7 @@ html {
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  width: 100vw;
   justify-content: space-around;
   background-image: url("../../images/bg-mobile-dark.jpg");
   background-size: contain;
@@ -29,7 +30,8 @@ html {
     color: #fafafa;
     letter-spacing: 0.4rem;
     font-weight: 700;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin-top: 1rem; }
 
 .input-note {
   background-color: #25273c;
@@ -68,7 +70,6 @@ html {
   margin: 1.5rem 1rem;
   border-bottom: 1px solid #4d5066;
   color: #cacde8;
-  font-size: 1.6rem;
   width: 80%; }
   .note span {
     font-size: 1.6rem;
@@ -92,9 +93,8 @@ html {
   color: #25273c;
   border: none;
   margin: 0.5rem;
-  display: flex;
-  align-items: center;
-  font-weight: 500; }
+  font-weight: 500;
+  border-radius: 0.5rem; }
 
 .filter-notes {
   display: flex;
@@ -156,5 +156,41 @@ html {
     .hide-completed-notes .text #hide-completed-notes {
       margin: 0 1rem;
       border: none; }
+
+@media only screen and (min-width: 768px) {
+  .header .__title {
+    font-size: 3.5rem; }
+
+  .input-note {
+    width: 70%; }
+    .input-note #search-note {
+      font-size: 1.8rem; }
+
+  .notes {
+    width: 70%; }
+    .notes .note span {
+      font-size: 2rem; }
+    .notes .show-text {
+      font-size: 1.8rem;
+      margin-top: 1.5rem; }
+
+  #new-form {
+    width: 75%; }
+    #new-form input {
+      font-size: 1.8rem; }
+    #new-form button {
+      font-size: 1.8rem; }
+
+  .hide-completed-notes .text {
+    font-size: 2.5rem; } }
+@media screen and (min-width: 1200px) {
+  .input-note {
+    width: 50%; }
+
+  .notes {
+    width: 50%; }
+
+  #new-form {
+    width: 50%; } }
 
 /*# sourceMappingURL=main.css.map */
